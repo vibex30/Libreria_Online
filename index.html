@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Librería online con una gran variedad de libros en español. Encuentra lo mejor en literatura, ciencia, tecnología, y más." />
+    <title>Entre Líneas - Librería Online</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="bg-light shadow-sm py-2">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light" role="navigation" aria-label="Menú principal">
+          <a class="navbar-brand d-flex align-items-center me-5" href="index.html">
+            <img src="imagenes/logo.svg" alt="Logo de la librería Entre Líneas" width="50" height="50" class="me-2" />
+            <span class="fw-bold">Entre Líneas</span>
+          </a>
+    
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Mostrar u ocultar navegación">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+    
+          <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item"><a class="nav-link" href="index.html" data-en="Home" data-es="Inicio">Inicio</a></li>
+              <li class="nav-item"><a class="nav-link" href="pagina-de-busqueda.html" data-en="Search" data-es="Buscar">Buscar</a></li>
+              <li class="nav-item"><a class="nav-link" href="carrito.html" data-en="Shopping cart" data-es="Cesta">Cesta</a></li>
+              <li class="nav-item"><a class="nav-link" href="pagina-de-informacion.html" data-en="Information and contact" data-es="Información y contacto">Información y contacto</a></li>
+            </ul>
+    
+            <div class="d-flex align-items-center justify-content-center mx-auto" style="gap: 0.75rem; max-width: 500px;">
+              <form class="d-flex" role="search" aria-label="Buscar libros en el catálogo">
+                <label for="buscador" class="visually-hidden">Buscar libros</label>
+                <input class="form-control me-2" id="buscador" type="search" placeholder="Buscar..." aria-label="Buscar libros" />
+                <button class="btn btn-outline-primary" type="submit" data-en="Search" data-es="Buscar">Buscar</button>
+              </form>
+              
+              <select id="idioma" class="form-select w-auto">
+                <option value="es" selected>ES</option>
+                <option value="en">EN</option>
+              </select>
+
+            </div>
+    
+            <button id="btn-carrito" aria-controls="carrito" aria-expanded="false" aria-label="Abrir carrito de la compra">
+              <img src="iconos/cart.svg" alt="Carrito" />
+            </button>
+    
+            <aside id="carrito" role="complementary" aria-label="Resumen del carrito de compra">
+              <p data-es="Elementos:" data-en="Items:">Elementos: <span id="cant">0</span></p>
+              <ul id="lista"></ul>
+              <p data-es="IVA:" data-en="VAT:">IVA: <span id="iva">0,00</span> €</p>
+              <p data-es="Total:" data-en="Total:">Total: <span id="tot">0,00</span> €</p>
+              <button id="vaciar" class="btn" data-es="Vaciar carrito" data-en="Empty cart">Vaciar carrito</button>
+              <a href="carrito.html" class="btn btn-success w-100 mt-3 fw-bold">Ir a la cesta</a>
+            </aside>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- BANNER-->
+    <div class="container my-4 d-flex justify-content-center">
+      <div class="ratio ratio-16x9 shadow rounded" style="max-width: 350px; width: 100%; overflow: hidden;">
+        <iframe src="banner/banner.html" title="Banner Entre Líneas" allowfullscreen></iframe>
+      </div>
+    </div>
+    
+    
+    
+  
+
+
+
+    <section class="hero d-flex align-items-center">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-6">
+              <h1 data-en="Discover your next favorite books!" data-es="¡Descubre tus próximos libros favoritos!">¡Descubre tus próximos libros favoritos!</h1>
+              <p data-en="We offer thousands of titles, from novels to specialized books." data-es="Ofrecemos miles de títulos, desde novelas hasta libros especializados.">Ofrecemos miles de títulos, desde novelas hasta libros especializados.</p>
+              <a class="btn" data-en="See Catalog" data-es="Ver Catálogo" href="pagina-de-busqueda.html">Ver Catálogo</a>
+            </div>
+            <div class="col-md-6">
+              <img alt="Hero image" class="img-fluid" src="imagenes/library-with-books.jpg" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+
+      
+      <!-- Barra animada -->
+      <div class="barra-color"></div>
+
+
+
+
+
+      
+      <!-- Carrusel -->
+      <section class="py-5" style="background-color: #F3EAFB;">
+        <div class="container">
+          <h2 class="mb-4 text-center section-title" data-en="Books on Sale" data-es="Libros en Oferta" style="font-family: 'Poppins', sans-serif; font-weight: 600;">Libros en Oferta</h2>
+          <div class="carousel slide" data-bs-ride="carousel" id="carouselOfertas">
+            <!-- Indicadores -->
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselOfertas" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselOfertas" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            </div>
+      
+            <!-- Contenido del carrusel -->
+            <div class="carousel-inner">
+              <!-- Slide 1 -->
+              <div class="carousel-item active">
+                <div class="row row-cols-1 row-cols-md-5 g-3 justify-content-center">
+              
+                  <div class="col text-center">
+                    <div class="card-libro">
+                      <img src="imagenes/LosPilaresDeLaTierra.jpg" class="img-carrusel" alt="Los Pilares de la Tierra" />
+                      <div class="info-libro mt-2">
+                        <p class="fw-semibold mb-1">Los Pilares de la Tierra</p>
+                        <p class="mb-2">19,99 €</p>
+                      </div>
+                      <a href="ficha-libro1.html" class="btn btn-outline-primary btn-sm mt-auto">Ver más...</a>
+                    </div>
+                  </div>
+              
+                  <div class="col text-center">
+                    <div class="card-libro">
+                      <img src="imagenes/LasCosasQPerdimos.jpg" class="img-carrusel" alt="Las cosas que perdimos en el fuego" />
+                      <div class="info-libro mt-2">
+                        <p class="fw-semibold mb-1">Las cosas que perdimos en el fuego</p>
+                        <p class="mb-2">15,95 €</p>
+                      </div>
+                      <a href="ficha-libro2.html" class="btn btn-outline-primary btn-sm mt-auto">Ver más...</a>
+                    </div>
+                  </div>
+              
+                  <div class="col text-center">
+                    <div class="card-libro">
+                      <img src="imagenes/elCrimenDeLaCalleFuencarral.jpg" class="img-carrusel" alt="El crimen de la calle Fuencarral" />
+                      <div class="info-libro mt-2">
+                        <p class="fw-semibold mb-1">El crimen de la calle Fuencarral</p>
+                        <p class="mb-2">12,00 €</p>
+                      </div>
+                      <a href="ficha-libro3.html" class="btn btn-outline-primary btn-sm mt-auto">Ver más...</a>
+                    </div>
+                  </div>
+              
+                  <div class="col text-center">
+                    <div class="card-libro">
+                      <img src="imagenes/fortunataYJacinta.jpg" class="img-carrusel" alt="Fortunata y Jacinta" />
+                      <div class="info-libro mt-2">
+                        <p class="fw-semibold mb-1">Fortunata y Jacinta</p>
+                        <p class="mb-2">18,50 €</p>
+                      </div>
+                      <a href="ficha-libro4.html" class="btn btn-outline-primary btn-sm mt-auto">Ver más...</a>
+                    </div>
+                  </div>
+              
+                  <div class="col text-center">
+                    <div class="card-libro">
+                      <img src="imagenes/harryPotter.jpg" class="img-carrusel" alt="Harry Potter y la Piedra Filosofal" />
+                      <div class="info-libro mt-2">
+                        <p class="fw-semibold mb-1">Harry Potter y la Piedra Filosofal</p>
+                        <p class="mb-2">17,95 €</p>
+                      </div>
+                      <a href="ficha-libro5.html" class="btn btn-outline-primary btn-sm mt-auto">Ver más...</a>
+                    </div>
+                  </div>
+              
+                </div>
+              </div>
+              
+      
+              <!-- Slide 2 -->
+              <div class="carousel-item">
+                <div class="row row-cols-1 row-cols-md-5 g-3 justify-content-center">
+                  <div class="col text-center">
+                    <a class="d-block text-decoration-none hover-effect" href="ficha-libro6.html">
+                      <img src="imagenes/100añosDeSoledad.jpg" class="img-carrusel" alt="Cien años de soledad" loading="lazy" />
+                      <p class="mt-2">Cien años de soledad</p>
+                    </a>
+                  </div>
+                  <div class="col text-center">
+                    <a class="d-block text-decoration-none hover-effect" href="ficha-libro7.html">
+                      <img src="imagenes/orgulloYPrejuicio.jpg" class="img-carrusel" alt="Orgullo y prejuicio" loading="lazy" />
+                      <p class="mt-2">Orgullo y prejuicio</p>
+                    </a>
+                  </div>
+                  <div class="col text-center">
+                    <a class="d-block text-decoration-none hover-effect" href="ficha-libro8.html">
+                      <img src="imagenes/it.jpg" class="img-carrusel" alt="It (ESO)" loading="lazy" />
+                      <p class="mt-2">It</p>
+                    </a>
+                  </div>
+                  <div class="col text-center">
+                    <a class="d-block text-decoration-none hover-effect" href="ficha-libro9.html">
+                      <img src="imagenes/elGuardianEntreElCenteno.jpg" class="img-carrusel" alt="El Guardián entre el Centeno" loading="lazy" />
+                      <p class="mt-2">El Guardián entre el Centeno</p>
+                    </a>
+                  </div>
+                  <div class="col text-center">
+                    <a class="d-block text-decoration-none hover-effect" href="ficha-libro10.html">
+                      <img src="imagenes/elDiaQueSePerdioLaCordura.jpg" class="img-carrusel" alt="El día que se perdió la cordura" loading="lazy" />
+                      <p class="mt-2">El día que se perdió la cordura</p>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+      
+            <!-- Botones de navegación -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselOfertas" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselOfertas" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Siguiente</span>
+            </button>
+          </div>
+        </div>
+      </section>
+      
+<!--Carrusel los más destados-->
+<section class="py-5" style="background-color: #DECAE8;">
+    <div class="container">
+      <h2 class="mb-4 text-center section-title" data-en="Top Picks" data-es="Los más destacados" style="font-family: 'Poppins', sans-serif; font-weight: 600;">Los más destacados</h2>
+      <div class="carousel slide" data-bs-ride="carousel" id="carouselDestacados">
+        <!-- Indicadores -->
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselDestacados" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselDestacados" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        </div>
+  
+        <!-- Slides -->
+        <div class="carousel-inner">
+          <!-- Por ahora solo uno -->
+          <div class="carousel-item active">
+            <div class="row row-cols-1 row-cols-md-5 g-3 justify-content-center">
+              <div class="col text-center">
+                <a class="d-block text-decoration-none hover-effect" href="ficha-libroDest.html">
+                  <img src="imagenes/sapiens.jpg" class="img-carrusel" alt="Sapiens" />
+                  <p class="mt-2">Sapiens</p>
+                </a>
+              </div>
+              <div class="col text-center">
+                <a class="d-block text-decoration-none hover-effect" href="ficha-libroDest2.html">
+                  <img src="imagenes/marina.jpg" class="img-carrusel" alt="Marina" />
+                  <p class="mt-2">Marina</p>
+                </a>
+              </div>
+              <div class="col text-center">
+                <a class="d-block text-decoration-none hover-effect" href="ficha-libroDest3.html">
+                  <img src="imagenes/laComunidadDelAnillo.jpg" class="img-carrusel" alt="El Señor de los Anillos" />
+                  <p class="mt-2">El Señor de los Anillos: La Comunidad del Anillo</p>
+                </a>
+              </div>
+              <div class="col text-center">
+                <a class="d-block text-decoration-none hover-effect" href="ficha-libroDest4.html">
+                  <img src="imagenes/africanus.jpg" class="img-carrusel" alt="Africanus" />
+                  <p class="mt-2">Africanus</p>
+                </a>
+              </div>
+              <div class="col text-center">
+                <a class="d-block text-decoration-none hover-effect" href="ficha-libroDest5.html">
+                  <img src="imagenes/elResplandor.jpg" class="img-carrusel" alt="El Resplandor" />
+                  <p class="mt-2">El Resplandor</p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Botones de navegación -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselDestacados" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselDestacados" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Siguiente</span>
+        </button>
+      </div>
+    </div>
+  </section>
+  
+<!--Novedades-->
+<!-- Novedades -->
+<section class="py-5" style="background-color: #F3EAFB;">
+  <div class="container">
+    <h2 class="mb-4 text-center section-title" data-en="📚 New Arrivals" data-es="📚 Novedades">📚 Novedades</h2>
+
+    <!-- Bloque exclusivo -->
+    <div class="text-center mb-5">
+      <h4>✨ Os traemos en exclusiva...</h4>
+      <p class="lead">La edición limitada de <strong>El Señor de los Anillos: Ilustrada por el autor</strong></p>
+      <img src="imagenes/leSeñorDeLosAnillos.jpg" class="img-fluid rounded shadow" alt="Edición limitada El Señor de los Anillos" style="max-width: 400px;" />
+      <p class="lead">A partir del 20 de juinio podrás reservarla <strong>¡No te quedes sin ella!</strong></p>
+
+    </div>
+
+    <!-- Otra novedad destacada -->
+    <div class="text-center mb-5">
+      <p class="lead">🆕 Además, ya puedes conseguir <strong>otra edición limitada lista para comprar</strong>:</p>
+      <img src="imagenes/leHarryPotter.jpg" class="img-fluid rounded shadow" alt="Otra edición limitada disponible" style="max-width: 400px;" />
+      <p class="lead">¿A qué estás esperando?</p>
+
+    </div>
+  </div>
+</section>
+
+  
+  <!-- CATEGORIASSSS-->
+  <div class="container my-5">
+    <h2 class="text-center mb-4" data-en="Book Categories" data-es="Categorías de libros">Categorías de libros</h2>
+    <ul class="nav nav-tabs" id="tabCategorias" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" data-en="Fiction" data-es="Ficción" data-bs-target="#ficcion" data-bs-toggle="tab" id="tab-ficcion" role="tab" style="background-color: #F3EAFB;" type="button">
+          Ficción
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" data-en="Non-Fiction" data-es="No Ficción" data-bs-target="#no-ficcion" data-bs-toggle="tab" id="tab-no-ficcion" role="tab" style="background-color: #F3EAFB;" type="button">
+          No Ficción
+        </button>
+      </li>
+    </ul>
+  
+    <div class="tab-content p-3 border border-top-0" id="contenidoCategorias">
+      <div class="tab-pane fade show active" id="ficcion" role="tabpanel">
+        <h3 data-en="What are fiction books?" data-es="¿Qué son los libros de ficción?">¿Qué son los libros de ficción?</h3>
+        <p data-en="Fiction books tell invented stories. The author creates characters, places, and events that did not really happen." data-es="Los libros de ficción son aquellos que cuentan historias inventadas, es decir, que no han ocurrido realmente. El autor imagina personajes, lugares y sucesos.">
+          Los libros de ficción son aquellos que cuentan historias inventadas, es decir, que no han ocurrido realmente. El autor imagina personajes, lugares y sucesos.
+        </p>
+        <p data-en="Some examples of fiction books you can find in Entre Líneas:" data-es="Algunos ejemplos de libros de ficción que puedes encontrar en Entre Líneas:">
+          Algunos ejemplos de libros de ficción que puedes encontrar en Entre Líneas:
+        </p>
+        <ul>
+          <li data-en="Harry Potter by J.K. Rowling" data-es="Harry Potter de J.K. Rowling">Harry Potter de J.K. Rowling</li>
+          <li data-en="One Hundred Years of Solitude by Gabriel García Márquez" data-es="Cien años de soledad de Gabriel García Márquez">Cien años de soledad de Gabriel García Márquez</li>
+          <li data-en="1984 by George Orwell" data-es="1984 de George Orwell">1984 de George Orwell</li>
+          <li data-en="Pride and Prejudice by Jane Austen" data-es="Orgullo y prejuicio de Jane Austen">Orgullo y prejuicio de Jane Austen</li>
+
+        </ul>
+        <p data-en="Genres include: novel, short story, science fiction, fantasy, horror, adventure, etc." data-es="Se incluyen géneros como: novela, cuento, ciencia ficción, fantasía, terror, aventuras, etc.">
+          Se incluyen géneros como: novela, cuento, ciencia ficción, fantasía, terror, aventuras, etc.
+        </p>
+      </div>
+  
+      <div class="tab-pane fade" id="no-ficcion" role="tabpanel">
+        <h3 data-en="What are non-fiction books?" data-es="¿Qué son los libros de no ficción?">¿Qué son los libros de no ficción?</h3>
+        <p data-en="Non-fiction books are based on real events. Their purpose is to inform, explain, or recount true experiences without fictional elements." data-es="Los libros de no ficción están basados en hechos reales. Su propósito es informar, explicar o relatar experiencias verdaderas sin elementos ficticios.">
+          Los libros de no ficción están basados en hechos reales. Su propósito es informar, explicar o relatar experiencias verdaderas sin elementos ficticios.
+        </p>
+        <p data-en="Some examples of non-fiction books you can find in Entre Líneas:" data-es="Algunos ejemplos de libros de no ficción que puedes encontrar en Entre Líneas:">
+          Algunos ejemplos de libros de no ficción que puedes encontrar en Entre Líneas:
+        </p>
+        <ul>
+          <li data-en="Sapiens: A Brief History of Humankind by Yuval Noah Harari" data-es="Sapiens: De animales a dioses de Yuval Noah Harari">Sapiens: De animales a dioses de Yuval Noah Harari</li>
+          <li data-en="The Diary of Anne Frank" data-es="El diario de Ana Frank">El diario de Ana Frank</li>
+          <li data-en="Educated by Tara Westover" data-es="Una educación de Tara Westover">Una educación de Tara Westover</li>
+          <li data-en="Brief Answers to the Big Questions by Stephen Hawking" data-es="Breves respuestas a las grandes preguntas de Stephen Hawking">Breves respuestas a las grandes preguntas de Stephen Hawking</li>
+
+
+        </ul>
+        <p data-en="This category includes genres like: essay, biography, autobiography, history, science, self-help, cooking, politics, and more." data-es="En esta categoría se incluyen géneros como: ensayo, biografía, autobiografía, libros de historia, ciencia, autoayuda, cocina, política, y más.">
+          En esta categoría se incluyen géneros como: ensayo, biografía, autobiografía, libros de historia, ciencia, autoayuda, cocina, política, y más.
+        </p>
+      </div>
+    </div>
+  </div>
+  
+  
+  <!-- Ebooks recomendados-->
+  <section class="py-5" style="background-color:#F3EAFB;">
+    <div class="container">
+      <h2 class="mb-4 text-center section-title" data-en="📱 Recommended Ebooks" data-es="📱 Ebooks recomendados">📱 Ebooks recomendados</h2>
+      <div class="row row-cols-1 row-cols-md-5 g-3 justify-content-center">
+        <div class="col text-center">
+          <img alt="Ebook 1" class="img-carrusel" src="imagenes/trasLaPuerta.jpg" />
+          <p class="mt-2">Tras la puerta</p>
+        </div>
+        <div class="col text-center">
+          <img alt="Ebook 2" class="img-carrusel" src="imagenes/lasCeniasYElReyMaldito.jpg" />
+          <p class="mt-2">Las Cenizas y el Rey Maldito</p>
+        </div>
+        <div class="col text-center">
+          <img alt="Ebook 3" class="img-carrusel" src="imagenes/elEmperador.jpg" />
+          <p class="mt-2">El Emperador</p>
+        </div>
+        <div class="col text-center">
+          <img alt="Ebook 4" class="img-carrusel" src="imagenes/laMuyCatastroficaVisitaAlZoo" />
+          <p class="mt-2">La muy catastrófica visita al zoo</p>
+        </div>
+        <div class="col text-center">
+          <img alt="Ebook 5" class="img-carrusel" src="imagenes/elAlbatrosNegro.jpg" />
+          <p class="mt-2">El Albatros Negro</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!--Otro corte de seccion-->
+<div class="py-4 text-center" style="background-color: #D8ECF2;">
+    <h4 data-en="🎉 New Service!" data-es="🎉 ¡Nuevo servicio!">🎉 ¡Nuevo servicio!</h4>
+    <p data-en="Now you can receive your books in less than 48 hours. Free shipping from €20." data-es="Ahora puedes recibir tus libros en menos de 48 horas. Envío gratuito a partir de 20€.">
+      Ahora puedes recibir tus libros en menos de 48 horas. Envío gratuito a partir de 20€.
+    </p>
+  </div>
+  
+  <div class="container my-5">
+    <h2 data-en="Frequently Asked Questions" data-es="Preguntas frecuentes">Preguntas frecuentes</h2>
+    <div class="accordion" id="accordionPreguntas">
+  
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button" data-bs-target="#collapseOne" data-bs-toggle="collapse" style="background-color: #D8ECF2;" type="button"
+            data-en="How to buy a book?" data-es="¿Cómo comprar un libro?">
+            ¿Cómo comprar un libro?
+          </button>
+        </h2>
+        <div class="accordion-collapse collapse show" data-bs-parent="#accordionPreguntas" id="collapseOne">
+          <div class="accordion-body" data-en='Just click the "Add to cart" button and complete your purchase.' data-es='Solo tienes que hacer clic en el botón "Añadir al carrito" y finalizar la compra.'>
+            Solo tienes que hacer clic en el botón "Añadir al carrito" y finalizar la compra.
+          </div>
+        </div>
+      </div>
+  
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed" data-bs-target="#collapseTwo" data-bs-toggle="collapse" style="background-color: #D8ECF2;" type="button"
+            data-en="How long does delivery take?" data-es="¿Cuánto tarda el envío?">
+            ¿Cuánto tarda el envío?
+          </button>
+        </h2>
+        <div class="accordion-collapse collapse" data-bs-parent="#accordionPreguntas" id="collapseTwo">
+          <div class="accordion-body" data-en="Between 24 and 48 hours if you are in mainland Spain." data-es="Entre 24 y 48 horas si estás en la península.">
+            Entre 24 y 48 horas si estás en la península.
+          </div>
+        </div>
+      </div>
+  
+    </div>
+  </div>
+  
+  
+<!-- Footer -->
+<footer class="bg-light text-dark py-4 mt-5">
+  <div class="container">
+    <div class="row align-items-center">
+      
+      <!-- Columna 1: Texto -->
+      <div class="col-md-4 text-md-start text-center mb-3 mb-md-0">
+        <p class="mb-0">© 2024 Entre Líneas. Todos los derechos reservados.</p>
+      </div>
+      
+      <!-- Columna 2: Redes sociales -->
+      <div class="col-md-4 text-center mb-3 mb-md-0 footer-social">
+        <div class="d-flex justify-content-start justify-content-md-center align-items-center flex-wrap gap-3 redes-grupo">
+          <a class="d-inline-flex align-items-center" href="#">
+            <span class="me-1">Facebook</span>
+            <img alt="Facebook" class="social-icon" src="iconos/facebook.svg" />
+          </a>
+          <a class="d-inline-flex align-items-center" href="#">
+            <span class="me-1">Twitter</span>
+            <img alt="Twitter" class="social-icon" src="iconos/twitter-x.svg" />
+          </a>
+          <a class="d-inline-flex align-items-center" href="#">
+            <span class="me-1">Instagram</span>
+            <img alt="Instagram" class="social-icon" src="iconos/instagram.svg" />
+          </a>
+          <a class="d-inline-flex align-items-center" href="#">
+            <span class="me-1">TikTok</span>
+            <img alt="TikTok" class="social-icon" src="iconos/tiktok.svg" />
+          </a>
+        </div>
+      </div>
+      
+      <!-- Columna 3: Enlaces legales -->
+      <div class="col-md-4 text-md-end text-center">
+        <div class="d-flex flex-column align-items-md-end align-items-center">
+          <div>
+            <a class="me-3" data-en="Contact" data-es="Contacto" href="pagina-de-informacion.html">Contacto</a>
+            <a data-en="Legal Notice" data-es="Aviso Legal" href="#">Aviso Legal</a>
+          </div>
+          <div>
+            <a class="me-3" data-en="Privacy Policy" data-es="Política de Privacidad" href="#">Política de Privacidad</a>
+            <a data-en="Cookies" data-es="Cookies" href="#">Cookies</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</footer>
+
+
+
+
+<!-- Bootstrap JavaScript  -->
+<button id="btn-subir" title="Volver arriba">⬆️</button>
+<script src="js/main.js" type="module"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  window.addEventListener("scroll", () => {
+    const btn = document.getElementById("btn-subir");
+    if (window.scrollY > 100) {
+      btn.style.display = "block";
+    } else {
+      btn.style.display = "none";
+    }
+  });
+
+  document.getElementById("btn-subir").addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  
+    const selector = document.getElementById("idioma");
+    if (selector) {
+      selector.addEventListener("change", () => {
+        const idioma = selector.value;
+        document.querySelectorAll("[data-es]").forEach((el) => {
+          const texto = el.getAttribute(`data-${idioma}`);
+          if (el.tagName === "INPUT" || el.tagName === "TEXTAREA") {
+            el.placeholder = texto;
+          } else {
+            el.textContent = texto;
+          }
+        });
+      });
+    }
+
+</script>
+</body>
+</html>

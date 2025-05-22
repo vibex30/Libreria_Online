@@ -1,0 +1,469 @@
+  /* ==========================
+   Variables personalizadas
+   ========================== */
+  :root {
+    --color-bg-primary: #F8F9FA;
+    --color-text-primary: #1C1C1E;
+    --color-bg-secondary: #DECAE8;
+    --color-button-hover: #495057;
+    --color-text-secondary: #212529;
+  }
+
+  /* Modo oscuro */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-bg-primary: #121212;
+      --color-text-primary: #F1F3F5;
+      --color-bg-secondary: #1E1E1E;
+      --color-button-hover: #343A40;
+      --color-text-secondary: #DEE2E6;
+    }
+  }
+
+
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #121212;
+      color: #f1f1f1;
+    }
+  
+    header, footer {
+      background-color: #1e1e1e;
+      color: #ffffff;
+    }
+  
+    .navbar, .navbar-nav .nav-link {
+      background-color: transparent;
+      color: #ffffff;
+    }
+  
+    .section-title,
+    h1, h2, h3, h4, h5, h6 {
+      color: #ffffff;
+    }
+  
+    .card-libro,
+    .carousel,
+    .tab-content,
+    .accordion-body {
+      background-color: #1c1c1c;
+      color: #f1f1f1;
+    }
+  
+    .btn,
+    .btn-outline-primary {
+      border-color: #ffffff;
+      color: #ffffff;
+    }
+  
+    .btn:hover,
+    .btn-outline-primary:hover {
+      background-color: #ffffff;
+      color: #121212;
+    }
+  
+    input,
+    select,
+    textarea {
+      background-color: #1c1c1c;
+      color: #ffffff;
+      border: 1px solid #888;
+    }
+  
+    a {
+      color: #9bc1ff;
+    }
+  
+    a:hover {
+      color: #ffffff;
+    }
+  
+    .bg-light {
+      background-color: #1e1e1e !important;
+    }
+  
+    .text-dark {
+      color: #ffffff !important;
+    }
+  }
+  
+
+  /* ==========================
+     Estilo del body
+     ========================== */
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+  }
+
+
+
+ 
+  
+  
+
+  /* ==========================
+    BARRA ANIMADA
+    ========================== */
+  .barra-color {
+    height: 10px;
+    background-color: black;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .barra-color::before {
+    content: "";
+    position: absolute;
+    left: -100%;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #1C1C1C, #334A64, #ddd);
+    animation: slide 5s linear infinite;
+  }
+
+  @keyframes slide {
+    0% {
+      left: -100%;
+    }
+
+    100% {
+      left: 100%;
+    }
+  }
+
+
+
+
+  .card-libro {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: 0 0.5rem;
+  }
+  
+  .card-libro .info-libro {
+    min-height: 100px; /* Ajusta si algún título es más largo */
+  }
+  
+
+  /* ==========================
+     Botones personalizados
+     ========================== */
+  .btn {
+    font-size: 1rem;
+    text-transform: uppercase;
+    padding: 1em 2.5em;
+    border-radius: 3em;
+    transition: all 0.2s;
+    border: none;
+    font-weight: 500;
+    color: white;
+    background-color: var(--color-button-hover);
+    position: relative;
+  }
+
+  .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: inherit;
+    background-color: #fff;
+    z-index: -1;
+    transition: all 0.4s;
+  }
+
+  .btn:hover::after {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+
+  /* ==========================
+     Imágenes del carrusel
+     ========================== */
+  .img-carrusel {
+    height: 300px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px;
+  }
+
+  /* Carrusel responsive en móviles */
+  @media (max-width: 768px) {
+    .img-carrusel {
+      height: 220px;
+    }
+
+    .carousel-inner .row {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      display: flex;
+    }
+
+    .carousel-inner .col {
+      flex: 0 0 100%;
+      max-width: 100%;
+      scroll-snap-align: center;
+    }
+  }
+
+  /* ==========================
+     Hover en imágenes
+     ========================== */
+  .hover-effect {
+    transition: transform 0.3s;
+  }
+
+  .hover-effect:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+
+  .hover-effect img {
+    transition: transform 0.3s ease;
+  }
+
+  .hover-effect:hover img {
+    transform: scale(1.05);
+  }
+
+  /* ==========================
+     Página de búsqueda
+     ========================== */
+  main {
+    padding: 20px;
+    background-color: var(--color-bg-secondary);
+  }
+
+  h1 {
+    text-align: center;
+    color: var(--color-text-primary);
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  .search-results {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+  }
+
+  .book-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 250px;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.2s ease;
+    height: 100%;
+    min-height: 460px; /* Ajusta si tu contenido es más largo */
+  }
+  
+  .book-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+  
+  .book-card h3 {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+  }
+  
+  .book-card p {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .book-card a.btn {
+    margin-top: auto; /* Siempre empuja el botón abajo */
+  }
+  
+  
+
+  /* Libro ocupa todo el ancho en móvil */
+  @media (max-width: 768px) {
+    .book-card {
+      width: 100%;
+    }
+  }
+
+  /* ==========================
+     Página de información
+     ========================== */
+  .info {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .info h2 {
+    margin-bottom: 5%;
+    margin-top: 5%;
+  }
+
+  .info img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  /* ==========================
+     Carrito de la compra
+     ========================== */
+  #btn-carrito {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 101;
+    background-color: var(--color-bg-secondary);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  }
+
+  #btn-carrito:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(14, 12, 12, 0.3);
+    background-color: #ca54eb;
+  }
+
+  #carrito {
+    display: none;
+    background-color: var(--color-bg-secondary);
+    border: 1px solid #ccc;
+    padding: 1rem;
+    position: fixed;
+    right: 20px;
+    top: 80px;
+    width: 400px;
+    max-height: 80vh;
+    overflow-y: auto;
+    z-index: 100;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+  }
+
+  #carrito ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1rem;
+  }
+
+  #carrito li {
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 0;
+  }
+
+  #carrito .btn {
+    font-size: 0.9rem;
+    padding: 0.25rem 0.75rem;
+  }
+
+  #carrito input.form-control {
+    padding: 0.25rem;
+    height: 2rem;
+    font-size: 0.9rem;
+    width: 60px;
+  }
+
+  /* ==========================
+     Botón volver arriba
+     ========================== */
+  #btn-subir {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--color-button-hover);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    display: none;
+    z-index: 999;
+    transition: opacity 0.3s ease;
+  }
+
+  /* ==========================
+     Estilo de los tabs
+     ========================== */
+  .nav-tabs .nav-link {
+    color: var(--color-text-primary) !important;
+  }
+
+  /* ==========================
+     Footer
+     ========================== */
+  footer {
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-secondary);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .footer-social a {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    margin: 0 10px;
+  }
+
+  .social-icon {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-left: 5px;
+  }
+
+  @media (max-width: 768px) {
+    footer {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+
+  .social-icon {
+    height: 24px;
+    width: auto;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  
+  .redes-grupo {
+    row-gap: 1rem;
+    column-gap: 1.5rem; 
+  }
+  
+  

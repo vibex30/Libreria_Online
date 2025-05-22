@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="63.999996"
+   height="63.999996"
+   viewBox="0 0 16.933332 16.933332"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
+   sodipodi:docname="dibujo.svg"
+   inkscape:export-filename="DAW 24-25\DIW\T.O2. prueba\imagenes\DAW 24-25\DIW\T.O2. prueba\imagenes\añadirOscuro.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="11.01807"
+     inkscape:cx="27.72718"
+     inkscape:cy="28.54402"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1">
+    <inkscape:page
+       x="0"
+       y="0"
+       width="16.933332"
+       height="16.933332"
+       id="page2"
+       margin="0"
+       bleed="0" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1">
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect1"
+       is_visible="true"
+       lpeversion="1" />
+  </defs>
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.165;stroke-dasharray:none;stroke-opacity:1"
+       d="M 2.2572768,1.9451002 C 1.6223159,3.3973374 1.5890972,5.1020219 2.1669989,6.5778938 2.7449005,8.0537657 3.9268053,9.2826488 5.3790425,9.9176097 6.8312797,10.552571 8.5359642,10.585789 10.011836,10.007888 11.487708,9.429986 12.716591,8.2480812 13.351552,6.795844 13.986513,5.3436068 14.019732,3.6389223 13.44183,2.1630504 12.863928,0.68717847 11.682024,-0.54170462 10.229786,-1.1766655 8.7775491,-1.8116264 7.0728646,-1.8448451 5.5969927,-1.2669434 4.1211208,-0.68904178 2.8922377,0.49286297 2.2572768,1.9451002 Z"
+       id="path1"
+       inkscape:path-effect="#path-effect1"
+       inkscape:original-d="M 2.2572768,1.9451002 C -1.440815,0.32818564 9.6454559,5.1709248 13.351552,6.795844 17.057649,8.4207632 5.9553686,3.5620147 2.2572768,1.9451002 Z"
+       transform="matrix(1.0432594,0,0,1.0174524,0.4068065,3.4417148)" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="Layer 1">
+    <path
+       style="fill:#ffd5d5;stroke:#000000;stroke-width:0.509;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-dashoffset:0;paint-order:markers fill stroke"
+       d="M 5.4750967,7.8044142 11.574547,7.7323735"
+       id="path35" />
+    <path
+       style="fill:#ffd5d5;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-dashoffset:0;paint-order:markers fill stroke"
+       d="m 8.4766525,5.0432664 0.072325,5.5222956"
+       id="path36" />
+  </g>
+</svg>
