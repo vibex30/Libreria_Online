@@ -1,5 +1,4 @@
 import ShoppingCart from "./ShoppingCart.js";
-
 /* ======================================================
    Cargar HEADER y FOOTER automáticamente
    ====================================================== */
@@ -93,10 +92,13 @@ const vaciar  = document.getElementById("vaciar");
 function renderCart() {
   lista.innerHTML = "";
   for (const [name, item] of cart.cart.entries()) {
-    const li = document.createElement("li");
-    li.textContent = `${item.qty} × ${name} — ${(item.price * item.qty).toFixed(2)} €`;
-    lista.appendChild(li);
-  }
+  if (!item || typeof item.qty !== "number") continue; // evita errores
+
+  const li = document.createElement("li");
+  li.textContent = `${item.qty} × ${name} — ${(item.price * item.qty).toFixed(2)} €`;
+  lista.appendChild(li);
+}
+
   cant.textContent = cart.totalQty;
   iva.textContent  = cart.tax.toFixed(2).replace(".", ",");
   tot.textContent  = cart.total.toFixed(2).replace(".", ",");
